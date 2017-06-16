@@ -68,7 +68,7 @@ def getSummaryOfMonth(month, year):
     last = datetime(2017,1,1) + relativedelta(months=1)
     print "summary of month: " + str(month)
 
-    while first < last:
+    while current_day < last:
        tmp = getSummaryOfDay(current_day)
        for i in xrange(0,len(tmp)-1):
           last[i] = tmp[i] + last[i]      
