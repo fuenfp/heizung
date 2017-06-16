@@ -76,4 +76,4 @@ while current_day <= today:
 print "gekauft: " + str(last[0] + last[1] + last[2])
 print "verkauft:" + str(last[3] + last[4] + last[5])
 
-print 'finish :-)'
+print 'finish! :-)'
