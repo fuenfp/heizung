@@ -1,2 +1,2 @@
 # heizung
-Ansammlung von python scripte für meine Heizungssteuerung
+Ansammlung von Pythonscripte für meine Heizungssteuerung
