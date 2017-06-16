@@ -1,5 +1,6 @@
 from influxdb import InfluxDBClient
 from datetime import datetime, timedelta, date
+from dateutil.relativedelta import relativedelta
 
 def write_summary_data(l1, l2, l3, mode, time):
     json_body = [
@@ -61,19 +62,19 @@ def getSummaryOfDay(day):
     #write_summary_data(verkauft_l1, verkauft_l2, verkauft_l3, "verkauft", day)
     return [gekauft_l1,gekauft_l2,gekauft_l3, verkauft_l1,verkauft_l2,verkauft_l3]
 
-print 'summary of current month'
 
-today = date.today()
-current_day = today.replace(day=1)
-last = [0,0,0,0,0,0]
-while current_day <= today:
-   tmp = getSummaryOfDay(current_day)
+def getSummaryOfMonth(month, year):
+    current_day = datetime(year,month,1)
+    last = datetime(2017,1,1) + relativedelta(months=1)
+    print "summary of month: " + str(month)
+
+    while first < last:
+       tmp = getSummaryOfDay(current_day)
    for i in xrange(0,len(tmp)-1):
-      last[i] = tmp[i] + last[i]
-        
-   current_day = current_day + timedelta(days=1)
+      last[i] = tmp[i] + last[i]      
+      current_day = current_day + timedelta(days=1)
 
-print "gekauft: " + str(last[0] + last[1] + last[2])
-print "verkauft:" + str(last[3] + last[4] + last[5])
+    print "gekauft: " + str(last[0] + last[1] + last[2])
+    print "verkauft:" + str(last[3] + last[4] + last[5])
 
 print 'finish! :-)'
