@@ -76,5 +76,7 @@ def getSummaryOfMonth(month, year):
 
     print "gekauft: " + str(last[0] + last[1] + last[2])
     print "verkauft:" + str(last[3] + last[4] + last[5])
+    
 
+getSummaryOfMonth(1,2017)    
 print 'finish! :-)'
