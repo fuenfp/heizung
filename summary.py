@@ -70,9 +70,9 @@ def getSummaryOfMonth(month, year):
 
     while first < last:
        tmp = getSummaryOfDay(current_day)
-   for i in xrange(0,len(tmp)-1):
-      last[i] = tmp[i] + last[i]      
-      current_day = current_day + timedelta(days=1)
+       for i in xrange(0,len(tmp)-1):
+          last[i] = tmp[i] + last[i]      
+       current_day = current_day + timedelta(days=1)
 
     print "gekauft: " + str(last[0] + last[1] + last[2])
     print "verkauft:" + str(last[3] + last[4] + last[5])
