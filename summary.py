@@ -69,10 +69,9 @@ def getSummaryOfMonth(month, year):
     print "summary of month: " + str(month)
 
     while current_day < last:
-       tmp = getSummaryOfDay(current_day)
+       last = getSummaryOfDay(current_day)
        for i in xrange(0,len(tmp)-1):
-           print tmp[i]
-          #last[i] = tmp[i] + last[i]      
+          last[i] = tmp[i] + last[i]      
        current_day = current_day + timedelta(days=1)
 
 
