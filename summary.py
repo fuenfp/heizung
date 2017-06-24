@@ -80,6 +80,6 @@ def getSummaryOfMonth(month, year):
     
 
 for i in xrange(1,12):
-    print month + str(i)
+    print "month:" + str(i)
     getSummaryOfMonth(i,2017)    
 print 'finish! :-)'
