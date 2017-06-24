@@ -9,4 +9,4 @@ result = client.query(query)
 with open('test.csv', 'wb+') as f:
     dict_writer = csv.DictWriter(f, fieldnames=['time', 'l1', 'l2', 'l3'])
     dict_writer.writeheader()
-    dict_writer.writerows(rows)
+    dict_writer.writerows(result)
