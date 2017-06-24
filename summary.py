@@ -69,7 +69,7 @@ def getSummaryOfMonth(month, year):
     print "summary of month: " + str(month)
 
     while current_day < last:
-       sum := [0,0,0,0,0,0] 
+       sum = [0,0,0,0,0,0] 
        tmp = getSummaryOfDay(current_day)
        for i in xrange(0,len(tmp)-1):
           sum[i] = tmp[i] + sum[i]      
