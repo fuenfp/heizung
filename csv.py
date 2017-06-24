@@ -2,7 +2,7 @@ from influxdb import InfluxDBClient
 import csv
 import json
 
-query = "select mean(*) from power where time < now() 1h group by time(1m) fill(none);"
+query = "select mean(*) from power where time < now() - 1h group by time(1m) fill(none);"
 client = InfluxDBClient('localhost', 8086, 'root', 'root', 'logging')
 result = client.query(query)
 rows = json.loads(result)
