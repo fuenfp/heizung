@@ -79,5 +79,7 @@ def getSummaryOfMonth(month, year):
     print "verkauft:" + str(sum[3] + sum[4] + sum[5])
     
 
-getSummaryOfMonth(1,2017)    
+for i in xrange(1,12):
+    print month + str(i)
+    getSummaryOfMonth(i,2017)    
 print 'finish! :-)'
