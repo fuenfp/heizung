@@ -5,7 +5,7 @@ import json
 query = "select mean(*) from power where time < now() - 1h group by time(1m) fill(none);"
 client = InfluxDBClient('localhost', 8086, 'root', 'root', 'logging')
 result = client.query(query)
-rows = json.loads(result)
+rows = json.dumps(result)
 with open('test.csv', 'wb+') as f:
     dict_writer = csv.DictWriter(f, fieldnames=['time', 'l1', 'l2', 'l3'])
     dict_writer.writeheader()
