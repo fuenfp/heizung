@@ -7,6 +7,10 @@ client = InfluxDBClient('localhost', 8086, 'root', 'root', 'logging')
 result = client.query(query)
 
 with open('test.csv', 'wb+') as f:
-    dict_writer = csv.DictWriter(f, fieldnames=['time', 'l1', 'l2', 'l3'])
-    dict_writer.writeheader()
-    dict_writer.writerows(result)
+    with open(“hello.txt”, “w”) as f: 
+        f.write('time;l1;l2;l3');
+         for i in result.get_points('power'):
+             row = '\n' str(i['time'])[0:-1] + ';'str(i['mean_l1']) + ';' +  str(i['mean_l2']) + ';' + str(i['mean_l3'])
+             f.write(row) 
+    
+    
