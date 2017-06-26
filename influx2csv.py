@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from influxdb import InfluxDBClient
 import csv
 import json
