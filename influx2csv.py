@@ -3,7 +3,7 @@ from influxdb import InfluxDBClient
 import csv
 import json
 
-query = "select * from burner where time < now() - 1m group by time(1m) fill(none);"
+query = "select * from burner where time < now() - 1m;"
 client = InfluxDBClient('localhost', 8086, 'root', 'root', 'logging')
 result = client.query(query)
 
