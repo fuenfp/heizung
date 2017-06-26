@@ -3,7 +3,7 @@ from influxdb import InfluxDBClient
 import csv
 import json
 
-query = 'SELECT "dachs1" AS "Dachs 1", "dachs2" AS "Dachs 2", "oil_dachs" AS "Öldachs", "oil1" AS "Öl 1", "oil2" AS "Öl 2" FROM "burner" where time < now() - 1m group by time(1m) fill(none);'
+query = "select mean(*) from burner where time < now() - 1m group by time(1m) fill(none);"
 client = InfluxDBClient('localhost', 8086, 'root', 'root', 'logging')
 result = client.query(query)
 
